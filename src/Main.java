@@ -1,21 +1,21 @@
 public class Main {
     public static void main(String[] args) {
-        Book book = new Book("Война мага Iч.", 2003);
-        Book book2 = new Book("Драконы Осенних Сумерек", 2008);
-        Author Author = new Author("Ник", "Перумов");
-        Author Author2 = new Author("Маргарет", "Уэйс");
+        Author author = new Author("Ник", "Перумов");
+        Book book = new Book(author, "Война мага Iч.", 2003);
 
-        System.out.println("Book = " + book.getName() + " " + book.getPublication());
-        System.out.println("Author = " + Author.getName() + " " + Author.getSurname());
+        System.out.println("Author = " + author.getNameAuthor());
+        System.out.println("Book = " + book.getNameBook() + " " + book.getPublication());
         book.setPublication(2022);
         System.out.println("Измененный год публикации = " + book.getPublication() + "\n");
 
-        System.out.println("Book = " + book2.getName() + " " + book2.getPublication());
-        System.out.println("Author = " + Author2.getName() + " " + Author2.getSurname());
-        book2.setPublication(2022);
+        Author author2 = new Author("Маргарет", "Уэйс");
+        Book book2 = new Book(author2,"Драконы Осенних Сумерек", 2008);
+
+        System.out.println("Author = " + author2.getNameAuthor());
+        System.out.println("Book = " + book2.getNameBook() + " " + book2.getPublication());
+        book2.setPublication(2020);
         System.out.println("Измененный год публикации = " + book2.getPublication());
 
-       /** Вот этого я не понимаю:
-        *  Требуется создать отдельный класс для запуска приложения и объявить метод main в нем.*/
+
     }
 }
